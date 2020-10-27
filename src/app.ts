@@ -58,7 +58,7 @@ console.log(pizza.getName());
 //   toppings,
 // };
 
-// function createOrder(pizza: String, toppings: String) {
+// function createOrder(pizza: string, toppings: string) {
 //   return { pizza, toppings };
 // }
 
@@ -66,7 +66,7 @@ console.log(pizza.getName());
 
 // * rest param
 
-// function sumAll(message: String, ...arr: number[]): number {
+// function sumAll(message: string, ...arr: number[]): number {
 //   console.log(arguments[0]);
 //   return arr.reduce((acc, curr) => acc + curr, 0);
 // }
@@ -121,8 +121,8 @@ console.log(pizza.getName());
 //   name: pizzaName,
 //   toppings: pizzaToppings,
 // }: {
-//   name: String;
-//   toppings: String[];
+//   name: string;
+//   toppings: string[];
 // }) {
 //   return { pizzaName, pizzaToppings };
 // }
@@ -137,7 +137,7 @@ console.log(pizza.getName());
 
 // console.log(first, second, third);
 
-// function logToppings([first, second]: String[]) {
+// function logToppings([first, second]: string[]) {
 //   console.log(first, second);
 // }
 
@@ -157,3 +157,83 @@ console.log(pizza.getName());
 // console.log(`Pizza costs: ${cost}`);
 
 // parseInt('15', 10);
+
+// * string type, string literals
+
+// const coupon: string = 'pizza25';
+
+// function normalizeCoupon(code: string): string {
+//   return code.toUpperCase();
+// }
+
+// const couponMessage: string = `Final coupon is ${normalizeCoupon(coupon)}`;
+
+// console.log(couponMessage);
+
+// * boolean type, boolean literals
+
+// const pizzas: number = 2;
+
+// function offerDiscount(orders: number): boolean {
+//   return orders >= 3;
+// }
+
+// if (offerDiscount(pizzas)) {
+//   console.log(`You're entitled to a discount!`);
+// } else {
+//   console.log(`Order more than 3 pizzas for a discount!`);
+// }
+
+// * the "any" type
+
+// let coupon: any;
+
+// coupon = 25;
+// coupon = '25';
+// coupon = true;
+
+// * implicit vs explicit types
+
+// let implicitCoupon = 'pizza25'; // inferred type
+// let explicitCoupon: string = 'pizza25';
+// let explicitCoupon1;
+// explicitCoupon1 = 'pizza25';
+
+// * void type
+
+// let selectedTopping: string = 'pepperoni';
+
+// function selectTopping(topping: string): void {
+//   selectedTopping = topping;
+// }
+
+// selectTopping('bacon');
+
+// console.log(selectedTopping);
+
+// * never type
+// type tells ts that a value will never occur
+// return type never actually returns something because it is unreachable
+// or if an error is thrown, which means that we're not continuing the function
+// past the error, and the code below it will never be reached (ie. return is unreachable)
+
+// function orderError(error: string): never {
+//   throw new Error(error);
+//   // never going to return a value!
+// }
+
+// orderError('Something went wrong');
+
+// * null, undefined, strict null checks
+
+let coupon: string | null = 'pizza25';
+
+function removeCoupon(): void {
+  coupon = null;
+}
+
+console.log(coupon);
+
+removeCoupon();
+
+console.log(coupon);
