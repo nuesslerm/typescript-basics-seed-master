@@ -110,13 +110,50 @@ console.log(pizza.getName());
 
 // * destructuring arrays and objects
 
-const pizza = {
-  name: 'Pepperoni',
-  toppings: ['pepperoni'],
-};
+// import { uppercase } from './utils';
 
-function order({ name, toppings }: { name: String; toppings: String[] }) {
-  console.log(name, toppings);
-}
+// const pizza = {
+//   name: 'Pepperoni',
+//   toppings: ['pepperoni'],
+// };
 
-order(pizza);
+// function order({
+//   name: pizzaName,
+//   toppings: pizzaToppings,
+// }: {
+//   name: String;
+//   toppings: String[];
+// }) {
+//   return { pizzaName, pizzaToppings };
+// }
+
+// const { pizzaName } = order(pizza);
+
+// console.log(pizzaName);
+
+// const toppings = ['pepperoni', 'bacon', 'chilli'];
+
+// const [first, second, third] = toppings;
+
+// console.log(first, second, third);
+
+// function logToppings([first, second]: String[]) {
+//   console.log(first, second);
+// }
+
+// logToppings(toppings);
+
+// * number types, arguments and functions
+
+// const pizzaCost: number = 10;
+// const pizzaToppings: number = 5;
+
+// function calculatePrice(cost: number, toppings: number): number {
+//   return cost + 1.5 * toppings;
+// }
+
+// // can use floats and integers, etc.
+// const cost: number = calculatePrice(pizzaCost, pizzaToppings);
+// console.log(`Pizza costs: ${cost}`);
+
+// parseInt('15', 10);
