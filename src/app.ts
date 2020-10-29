@@ -362,3 +362,58 @@ console.log(pizza.getName());
 // selectSize('small');
 
 // * type assertions
+
+// type Pizza = { name: string; toppings: number };
+
+// const pizza: Pizza = { name: 'blazing inferno', toppings: 5 };
+
+// const serialized = JSON.stringify(pizza);
+
+// // function getNameFromJSON(obj: string) {
+// //   return (<Pizza>JSON.parse(obj)).name;
+// // }
+// function getNameFromJSON(obj: string) {
+//   return (JSON.parse(obj) as Pizza).name;
+// }
+
+// getNameFromJSON(serialized);
+
+// * creating interfaces
+
+// type Pizza = {
+//   name: string;
+//   sizes: string[];
+// };
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]): Pizza {
+//   return {
+//     name,
+//     sizes,
+//   };
+// }
+
+// pizza = createPizza('pepperoni', ['small', 'medium']);
+
+// interface Pizza {
+//   name: string;
+//   sizes: string[];
+// }
+
+// // interface Pizzas {
+// //   data: Pizza[];
+// // }
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]): Pizza {
+//   return {
+//     name,
+//     sizes,
+//   };
+// }
+
+// pizza = createPizza('pepperoni', ['small', 'medium']);
+
+// * interfaces with function types
