@@ -226,14 +226,139 @@ console.log(pizza.getName());
 
 // * null, undefined, strict null checks
 
-let coupon: string | null = 'pizza25';
+// let coupon: string | null = 'pizza25';
 
-function removeCoupon(): void {
-  coupon = null;
-}
+// function removeCoupon(): void {
+//   coupon = null;
+// }
 
-console.log(coupon);
+// console.log(coupon);
 
-removeCoupon();
+// removeCoupon();
 
-console.log(coupon);
+// console.log(coupon);
+
+// * union and literal types
+
+// let pizzaSize: string = 'small';
+
+// function selectSize(size: 'small' | 'medium' | 'large'): void {
+//   pizzaSize = size;
+// }
+
+// selectSize('medium');
+
+// let pizzaSize: number = 1;
+
+// function selectSize(size: 1 | 2 | 3): void {
+//   pizzaSize = size;
+// }
+
+// selectSize(3);
+
+// console.log(`Pizza size: ${pizzaSize}`);
+
+// * function types
+
+// function sumOrder(price: number, quantity: number): number {
+//   return price * quantity;
+// }
+
+// let sumOrder: Function;
+
+// sumOrder = (price: number, quantity: number): number => {
+//   return price * quantity;
+// };
+
+// let sumOrder: (price: number, quantity: number) => number;
+
+// sumOrder = (x, y) => x * y;
+
+// let sumOrder: /* type declaration */ (
+//   price: number,
+//   quantity: number
+// ) => number = /* function assignment */ (x, y) => x * y;
+
+// const sum = sumOrder(25, 2);
+
+// console.log(`Total sum: ${sum}`);
+
+// * functions and optional arguments
+
+// let sumOrder: (price: number, quantity?: number) => number;
+
+// sumOrder = (x, y) => {
+//   if (y) return x * y;
+//   return x;
+// };
+
+// const sum = sumOrder(25);
+
+// console.log(`Total sum: ${sum}`);
+
+// * typed functions and default params
+
+// let sumOrder: (price: number, quantity?: number) => number;
+
+// // sumOrder = (x, y) => {
+// //   const q = y || 1;
+// //   return x * q;
+// // };
+
+// sumOrder = (x, y = 1) => {
+//   return x * y;
+// };
+
+// const sum = sumOrder(34);
+
+// console.log(`Total sum: ${sum}`);
+
+// * object types
+
+// let pizza: { name: string; price: number };
+
+// pizza = {
+//   name: 'plain old pepperoni',
+//   price: 20,
+// };
+
+// let pizza: { name: string; price: number; getName(): string } = {
+//   name: 'plain old pepperoni',
+//   price: 20,
+//   getName() {
+//     return pizza.name;
+//   },
+// };
+
+// console.log(pizza.getName());
+
+// * array types and generics
+
+// let sizes: string[];
+
+// sizes = ['small', 'medium', 'large'];
+
+// let toppings: Array<string>;
+
+// toppings = ['pepperoni', 'tomato', 'bacon'];
+
+// * tuple types for arrays
+
+// let pizza: [string, number, boolean, string];
+
+// pizza = ['pepperoni', 20, true, ''];
+
+// * type aliases
+
+// type Size = 'small' | 'medium' | 'large';
+// type Callback = (size: Size) => void;
+
+// let pizzaSize: Size = 'small';
+
+// const selectSize: Callback = (x) => {
+//   pizzaSize = x;
+// };
+
+// selectSize('small');
+
+// * type assertions
