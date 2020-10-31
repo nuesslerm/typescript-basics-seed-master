@@ -417,3 +417,109 @@ console.log(pizza.getName());
 // pizza = createPizza('pepperoni', ['small', 'medium']);
 
 // * interfaces with function types
+
+// interface Pizza {
+//   name: string;
+//   sizes: string[];
+//   getAvailableSizes(): string[];
+// }
+
+// type getAvailableSizes = () => string[];
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]) {
+//   return {
+//     name,
+//     sizes,
+//     getAvailableSizes() {
+//       return this.sizes;
+//     },
+//   } as Pizza;
+// }
+
+// pizza = createPizza('pepperoni', ['small', 'medium']);
+
+// * extending interfaces
+
+// interface Sizes {
+//   sizes: string[];
+// }
+// interface Pizza extends Sizes {
+//   name: string;
+//   getAvailableSizes(): string[];
+// }
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]) {
+//   return {
+//     name,
+//     sizes,
+//     getAvailableSizes() {
+//       return this.sizes;
+//     },
+//   } as Pizza;
+// }
+
+// pizza = createPizza('pepperoni', ['small', 'medium']);
+
+// * interfaces and optional properties
+
+// interface Sizes {
+//   sizes: string[];
+// }
+// interface Pizza extends Sizes {
+//   name: string;
+//   toppings?: number;
+//   getAvailableSizes(): string[];
+// }
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]): Pizza {
+//   return {
+//     name,
+//     sizes,
+//     getAvailableSizes() {
+//       return this.sizes;
+//     },
+//   };
+// }
+
+// pizza = createPizza('pepperoni', ['small', 'medium']);
+
+// pizza.toppings = 1;
+
+// * interfaces with index signatures
+
+// interface Sizes {
+//   sizes: string[];
+// }
+// interface Pizza extends Sizes {
+//   name: string;
+//   toppings?: number;
+//   getAvailableSizes(): string[];
+//   // [key: string]: any;
+//   [key: number]: string;
+//   dictionary?: {
+//     [key: string]: any;
+//   };
+// }
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]): Pizza {
+//   return {
+//     name,
+//     sizes,
+//     getAvailableSizes() {
+//       return this.sizes;
+//     },
+//   };
+// }
+
+// pizza = createPizza('pepperoni', ['small', 'medium']);
+// pizza[1] = 'xyz';
+// pizza.toppings = 1;
+
+// * understanding classes and constructors
