@@ -523,3 +523,159 @@ console.log(pizza.getName());
 // pizza.toppings = 1;
 
 // * understanding classes and constructors
+
+// // constructor function (pre-ES6)
+// function Pizza(name: string) {
+//   this.name = name;
+//   this.toppings = [];
+// }
+
+// // Pizza. -> apply own method to the function (acts as an object / class)
+// // new Pizza(); -> instance of the constructor function
+
+// Pizza.prototype.addTopping = function addTopping(topping: string) {
+//   this.toppings.push(topping);
+// };
+
+// const pizza = new Pizza('Pepperoni');
+// pizza.addTopping('pepperoni');
+
+// console.log(pizza);
+
+// class Pizza2 {
+//   name: string;
+//   toppings: string[] = [];
+
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+
+//   addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+// }
+
+// console.log(pizza);
+
+// * public and private members
+
+// class Pizza {
+//   // public and private only exist within TS, not JS
+//   public toppings: string[] = [];
+
+//   constructor(private name: string) {}
+
+//   public addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+// }
+
+// const pizza = new Pizza('Pepperoni');
+// pizza.addTopping('pepperoni');
+
+// console.log(pizza);
+
+// * readonly members
+// class Pizza {
+//   // public and private only exist within TS, not JS
+//   public toppings: string[] = [];
+
+//   constructor(readonly name: string) {}
+
+//   public addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+// }
+
+// const pizza = new Pizza('Pepperoni');
+// pizza.addTopping('pepperoni');
+// pizza.name = 'ABC';
+
+// console.log(pizza.name);
+
+// * setters and getters (accessors)
+
+// class Sizes {
+//   constructor(public sizes: string[]) {}
+
+//   // uses Object.defineProperty under the hood:
+//   // Object.defineProperty(Sizes.prototype, "availableSizes", {
+//   //   get: function() {
+//   //     return this.sizes;
+//   //   },
+//   //   set: function (sizes) {
+//   //     this.sizes = sizes;
+//   //   }
+//   // })
+
+//   set availableSizes(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+//   get availableSizes() {
+//     return this.sizes;
+//   }
+// }
+
+// const sizes = new Sizes(['small', 'medium']);
+
+// // invoke getter
+// console.log(sizes.availableSizes);
+// // invoke setter
+// sizes.availableSizes = ['medium', 'large'];
+
+// console.log(sizes.availableSizes);
+
+// class Pizza {
+//   // public and private only exist within TS, not JS
+//   public toppings: string[] = [];
+
+//   constructor(public name: string) {}
+
+//   public addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+// }
+
+// // element.className = "abc" -> setter
+// // console.log(element.className); -> getter
+
+// const pizza = new Pizza('Pepperoni');
+// pizza.addTopping('pepperoni');
+
+// console.log(pizza.name);
+
+// * classes and inheritance
+
+class Sizes {
+  constructor(public sizes: string[]) {}
+
+  set availableSizes(sizes: string[]) {
+    this.sizes = sizes;
+  }
+  get availableSizes() {
+    return this.sizes;
+  }
+}
+
+const sizes = new Sizes(['small', 'medium']);
+
+// invoke getter
+console.log(sizes.availableSizes);
+// invoke setter
+sizes.availableSizes = ['medium', 'large'];
+
+console.log(sizes.availableSizes);
+class Pizza {
+  public toppings: string[] = [];
+
+  constructor(public name: string) {}
+
+  public addTopping(topping: string) {
+    this.toppings.push(topping);
+  }
+}
+
+const pizza = new Pizza('Pepperoni');
+pizza.addTopping('pepperoni');
+
+console.log(pizza.name);
